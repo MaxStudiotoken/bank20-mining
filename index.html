@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BANK 2.0 - MINING | MaxStudio</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    color:white;
+    background:
+        radial-gradient(circle at 20% 15%, rgba(0,140,255,.20), transparent 30%),
+        radial-gradient(circle at 80% 20%, rgba(111,0,255,.20), transparent 30%),
+        radial-gradient(circle at 50% 80%, rgba(0,229,255,.08), transparent 35%),
+        #030611;
+    overflow-x:hidden;
+}
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    backdrop-filter:blur(18px);
+    background:rgba(3,6,17,.80);
+    border-bottom:1px solid rgba(0,229,255,.15);
+}
+
+.nav{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px 22px;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:900;
+    letter-spacing:1px;
+    background:linear-gradient(90deg,#00eaff,#6c4cff,#d500ff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.nav a{
+    color:#c7d1ef;
+    text-decoration:none;
+    margin-left:20px;
+    font-size:14px;
+}
+
+.nav a:hover{
+    color:#00eaff;
+}
+
+.hero{
+    max-width:1450px;
+    margin:0 auto;
+    padding:30px 20px 60px;
+}
+
+.hero img{
+    width:100%;
+    border-radius:26px;
+    display:block;
+    box-shadow:
+        0 0 30px rgba(0,183,255,.22),
+        0 0 90px rgba(111,0,255,.14);
+    border:1px solid rgba(0,229,255,.18);
+}
+
+.hero-text{
+    max-width:1000px;
+    margin:50px auto 0;
+    text-align:center;
+}
+
+.badge{
+    display:inline-block;
+    padding:9px 16px;
+    border-radius:999px;
+    border:1px solid rgba(0,229,255,.25);
+    background:rgba(0,229,255,.07);
+    color:#77efff;
+    font-size:13px;
+    letter-spacing:2px;
+    margin-bottom:20px;
+}
+
+h1{
+    font-size:clamp(42px,7vw,82px);
+    line-height:1;
+    margin-bottom:20px;
+    font-weight:900;
+    background:linear-gradient(90deg,#ffffff,#66eaff,#8c52ff,#ff00dc);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.hero-text p{
+    color:#aeb9d4;
+    line-height:1.8;
+    font-size:18px;
+}
+
+.buttons{
+    margin-top:30px;
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-block;
+    padding:15px 24px;
+    border-radius:12px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.25s;
+}
+
+.btn-primary{
+    color:#001018;
+    background:linear-gradient(90deg,#00eaff,#7770ff);
+    box-shadow:0 0 25px rgba(0,229,255,.28);
+}
+
+.btn-secondary{
+    color:white;
+    border:1px solid rgba(141,95,255,.4);
+    background:rgba(255,255,255,.04);
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+section{
+    max-width:1200px;
+    margin:auto;
+    padding:90px 22px;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title small{
+    color:#00eaff;
+    letter-spacing:3px;
+}
+
+.section-title h2{
+    font-size:clamp(32px,5vw,52px);
+    margin-top:12px;
+}
+
+.section-title p{
+    max-width:750px;
+    margin:15px auto 0;
+    color:#9ea9c4;
+    line-height:1.7;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.card{
+    padding:30px;
+    border-radius:20px;
+    background:
+        linear-gradient(145deg,rgba(13,23,56,.88),rgba(6,8,25,.92));
+    border:1px solid rgba(87,151,255,.18);
+    box-shadow:0 20px 50px rgba(0,0,0,.28);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    border-color:rgba(0,229,255,.45);
+    box-shadow:0 20px 50px rgba(0,229,255,.08);
+}
+
+.icon{
+    font-size:40px;
+    margin-bottom:18px;
+}
+
+.card h3{
+    color:#fff;
+    font-size:21px;
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#9faac5;
+    line-height:1.7;
+}
+
+.highlight{
+    border-radius:28px;
+    padding:45px;
+    background:
+        radial-gradient(circle at right top,rgba(118,53,255,.22),transparent 35%),
+        linear-gradient(135deg,rgba(0,229,255,.08),rgba(124,77,255,.10));
+    border:1px solid rgba(0,229,255,.18);
+    box-shadow:0 0 60px rgba(0,229,255,.06);
+}
+
+.highlight h2{
+    font-size:42px;
+    margin-bottom:20px;
+}
+
+.highlight p{
+    color:#b4bed7;
+    line-height:1.8;
+    font-size:17px;
+}
+
+.reward{
+    margin-top:30px;
+    font-size:clamp(36px,7vw,70px);
+    font-weight:900;
+    background:linear-gradient(90deg,#00eaff,#854cff,#ff00e6);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.steps{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.step{
+    position:relative;
+    text-align:center;
+    padding:30px 20px;
+    background:rgba(10,16,40,.7);
+    border-radius:18px;
+    border:1px solid rgba(130,90,255,.20);
+}
+
+.number{
+    width:44px;
+    height:44px;
+    line-height:44px;
+    margin:0 auto 18px;
+    border-radius:50%;
+    font-weight:bold;
+    color:#03131a;
+    background:linear-gradient(135deg,#00eaff,#9f5cff);
+}
+
+.step h3{
+    margin-bottom:10px;
+}
+
+.step p{
+    color:#9ea9c4;
+    line-height:1.6;
+}
+
+.warning{
+    margin-top:35px;
+    padding:22px;
+    border-left:4px solid #00eaff;
+    background:rgba(0,229,255,.06);
+    color:#b7c3dd;
+    line-height:1.7;
+    border-radius:10px;
+}
+
+footer{
+    margin-top:70px;
+    border-top:1px solid rgba(255,255,255,.08);
+    text-align:center;
+    padding:45px 20px;
+    color:#7885a4;
+}
+
+footer strong{
+    color:#00eaff;
+}
+
+@media(max-width:900px){
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+    .steps{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .nav-links{
+        display:none;
+    }
+}
+
+@media(max-width:600px){
+    .steps{
+        grid-template-columns:1fr;
+    }
+
+    .highlight{
+        padding:28px 20px;
+    }
+
+    .hero{
+        padding-left:10px;
+        padding-right:10px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="nav">
+        <div class="logo">BANK 2.0 • MINING</div>
+
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#eco">Eco Mining</a>
+            <a href="#rewards">Rewards</a>
+            <a href="#start">How to Start</a>
+        </div>
+    </div>
+</header>
+
+
+<div class="hero">
+
+    <img src="banert.png" alt="BANK 2.0 Blockchain Ecosystem">
+
+    <div class="hero-text">
+
+        <div class="badge">
+            MAXSTUDIO • BANK 2.0 ECOSYSTEM
+        </div>
+
+        <h1>BANK 2.0 MINING</h1>
+
+        <p>
+            A different way to understand cloud mining.
+            BANK 2.0 MINING was created to introduce more people
+            to the concept of digital mining while promoting a more
+            responsible approach to technology and the environment.
+        </p>
+
+        <div class="buttons">
+            <a class="btn btn-primary" href="#start">Start Mining</a>
+            <a class="btn btn-secondary" href="#eco">Discover the Project</a>
+        </div>
+
+    </div>
+</div>
+
+
+<section id="about">
+
+    <div class="section-title">
+        <small>MORE THAN MINING</small>
+        <h2>Learn. Participate. Earn.</h2>
+
+        <p>
+            BANK 2.0 MINING gives users a simple way to experience
+            how a cloud mining reward system can work without needing
+            expensive mining equipment or complicated configurations.
+        </p>
+    </div>
+
+    <div class="grid">
+
+        <div class="card">
+            <div class="icon">☁️</div>
+            <h3>Cloud Based</h3>
+            <p>
+                The experience is managed remotely.
+                Your phone does not need to perform intensive
+                cryptocurrency mining calculations.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🌱</div>
+            <h3>Environmental Responsibility</h3>
+            <p>
+                BANK 2.0 believes technology should continue advancing
+                without forgetting our responsibility to the planet.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">⚡</div>
+            <h3>No Heavy Device Usage</h3>
+            <p>
+                No GPU farms inside your phone, no excessive processor usage
+                and no need to leave your device performing intensive mining operations.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="eco">
+
+    <div class="highlight">
+
+        <h2>A More Responsible Vision of Mining</h2>
+
+        <p>
+            Traditional cryptocurrency mining can require large amounts
+            of electricity and specialized hardware.
+        </p>
+
+        <br>
+
+        <p>
+            BANK 2.0 MINING wants users to discover the idea of mining
+            from another perspective: a simple cloud-based reward experience
+            focused on accessibility, education and environmental responsibility.
+        </p>
+
+        <br>
+
+        <p>
+            The goal is not to turn your mobile phone into a mining machine.
+            The goal is to show that blockchain technology can continue evolving
+            while exploring more efficient and responsible models.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section id="rewards">
+
+    <div class="section-title">
+        <small>COMMUNITY REWARDS</small>
+        <h2>500,000 BANK 2.0 Tokens</h2>
+
+        <p>
+            A reward pool has been allocated to help more users discover
+            BANK 2.0 and participate in the ecosystem.
+        </p>
+    </div>
+
+    <div class="highlight">
+
+        <p>
+            Approximately
+        </p>
+
+        <div class="reward">
+            500,000 B20
+        </div>
+
+        <p>
+            have been allocated for community rewards.
+            The purpose is to distribute rewards among users,
+            introduce new people to the BANK 2.0 ecosystem
+            and help the project reach a larger community.
+        </p>
+
+        <div class="warning">
+            Rewards are subject to the availability of the community reward pool
+            and the conditions established by BANK 2.0.
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="start">
+
+    <div class="section-title">
+        <small>GET STARTED</small>
+        <h2>Start in a Few Steps</h2>
+
+        <p>
+            You only need a Solana-compatible wallet address.
+            No complicated configuration is required.
+        </p>
+    </div>
+
+    <div class="steps">
+
+        <div class="step">
+            <div class="number">1</div>
+            <h3>Choose a Wallet</h3>
+            <p>
+                Use a compatible wallet such as BANK 2.0 - WALLET,
+                Trust Wallet, MetaMask or Phantom.
+            </p>
+        </div>
+
+        <div class="step">
+            <div class="number">2</div>
+            <h3>Get Your Solana Address</h3>
+            <p>
+                Create a Solana account inside your wallet,
+                or copy your existing Solana public address.
+            </p>
+        </div>
+
+        <div class="step">
+            <div class="number">3</div>
+            <h3>Save Your Address</h3>
+            <p>
+                Paste your public Solana wallet address
+                inside BANK 2.0 MINING and press Save.
+            </p>
+        </div>
+
+        <div class="step">
+            <div class="number">4</div>
+            <h3>Start</h3>
+            <p>
+                Start the mining experience.
+                Each completed 12-hour cycle can generate
+                a BANK 2.0 reward.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="warning">
+        Never enter your seed phrase, private key or wallet password.
+        BANK 2.0 MINING only requires your PUBLIC Solana wallet address
+        to identify where eligible rewards can be sent.
+    </div>
+
+</section>
+
+
+<section>
+
+    <div class="highlight" style="text-align:center">
+
+        <h2>Every 12 Hours. One New Opportunity.</h2>
+
+        <p>
+            Keep participating, complete your mining cycles
+            and become part of the growing BANK 2.0 community.
+        </p>
+
+        <br>
+
+        <p>
+            No specialized mining hardware.<br>
+            No intensive mobile GPU mining.<br>
+            No complicated setup.
+        </p>
+
+        <div class="buttons">
+            <a class="btn btn-primary" href="#start">
+                Begin Your Journey
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+    © 2026 <strong>MaxStudio</strong> · BANK 2.0 MINING
+    <br><br>
+    Part of the BANK 2.0 ecosystem.
+</footer>
+
+</body>
+</html>
