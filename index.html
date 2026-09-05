@@ -6,7 +6,11 @@
 
 <title>BANK 2.0 - MINING | MaxStudio</title>
 
+<meta name="description"
+content="BANK 2.0 MINING - Cloud mining experience by MaxStudio. Learn about responsible blockchain participation and receive BANK 2.0 rewards.">
+
 <style>
+
 *{
     box-sizing:border-box;
     margin:0;
@@ -19,290 +23,651 @@ html{
 
 body{
     font-family:Arial, Helvetica, sans-serif;
-    color:white;
+    color:#ffffff;
+
     background:
-        radial-gradient(circle at 20% 15%, rgba(0,140,255,.20), transparent 30%),
-        radial-gradient(circle at 80% 20%, rgba(111,0,255,.20), transparent 30%),
-        radial-gradient(circle at 50% 80%, rgba(0,229,255,.08), transparent 35%),
-        #030611;
+        radial-gradient(circle at 15% 15%,rgba(0,140,255,.22),transparent 32%),
+        radial-gradient(circle at 85% 15%,rgba(121,0,255,.22),transparent 30%),
+        radial-gradient(circle at 50% 70%,rgba(0,229,255,.08),transparent 38%),
+        linear-gradient(180deg,#02040c,#05091a 50%,#02030a);
+
+    min-height:100vh;
     overflow-x:hidden;
 }
+
+/* =========================
+   NAVIGATION
+========================= */
 
 header{
     position:sticky;
     top:0;
     z-index:1000;
+
+    background:rgba(2,5,17,.84);
     backdrop-filter:blur(18px);
-    background:rgba(3,6,17,.80);
-    border-bottom:1px solid rgba(0,229,255,.15);
+
+    border-bottom:1px solid rgba(0,225,255,.16);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.35);
 }
 
 .nav{
-    max-width:1200px;
+    max-width:1300px;
     margin:auto;
+
     display:flex;
     align-items:center;
     justify-content:space-between;
-    padding:18px 22px;
+
+    padding:15px 22px;
 }
 
-.logo{
-    font-size:24px;
+.brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.brand img{
+    width:52px;
+    height:52px;
+    object-fit:contain;
+
+    filter:
+        drop-shadow(0 0 10px rgba(0,225,255,.4))
+        drop-shadow(0 0 20px rgba(118,63,255,.25));
+}
+
+.brand-name{
+    font-size:21px;
     font-weight:900;
     letter-spacing:1px;
-    background:linear-gradient(90deg,#00eaff,#6c4cff,#d500ff);
+
+    background:
+        linear-gradient(
+            90deg,
+            #00eaff,
+            #7185ff,
+            #a64dff,
+            #fa00ff
+        );
+
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
 }
 
-.nav a{
-    color:#c7d1ef;
+.right-menu{
+    display:flex;
+    align-items:center;
+    gap:26px;
+}
+
+.nav-links a{
     text-decoration:none;
-    margin-left:20px;
+    color:#c6d1ec;
+    margin-left:17px;
     font-size:14px;
 }
 
-.nav a:hover{
+.nav-links a:hover{
     color:#00eaff;
 }
 
-.hero{
-    max-width:1450px;
-    margin:0 auto;
-    padding:30px 20px 60px;
+/* =========================
+   LANGUAGES
+========================= */
+
+.languages{
+    display:flex;
+    gap:7px;
+    align-items:center;
 }
 
-.hero img{
-    width:100%;
-    border-radius:26px;
-    display:block;
+.lang-btn{
+    width:40px;
+    height:36px;
+
+    border-radius:9px;
+
+    border:1px solid rgba(255,255,255,.16);
+
+    background:rgba(255,255,255,.05);
+
+    cursor:pointer;
+
+    font-size:21px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    transition:.2s;
+}
+
+.lang-btn:hover{
+    transform:translateY(-2px);
+
+    background:rgba(0,229,255,.10);
+
+    border-color:rgba(0,229,255,.50);
+}
+
+.lang-btn.active{
+    border-color:#00eaff;
+
     box-shadow:
-        0 0 30px rgba(0,183,255,.22),
-        0 0 90px rgba(111,0,255,.14);
-    border:1px solid rgba(0,229,255,.18);
+        0 0 12px rgba(0,229,255,.35);
 }
 
-.hero-text{
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    max-width:1500px;
+    margin:auto;
+
+    padding:35px 20px 70px;
+}
+
+.banner{
+    width:100%;
+
+    display:block;
+
+    border-radius:27px;
+
+    border:
+        1px solid rgba(0,229,255,.22);
+
+    box-shadow:
+        0 0 35px rgba(0,183,255,.20),
+        0 0 110px rgba(110,0,255,.12);
+}
+
+.hero-content{
     max-width:1000px;
-    margin:50px auto 0;
+    margin:60px auto 0;
+
     text-align:center;
 }
 
-.badge{
+.main-logo{
+    width:min(330px,72vw);
+
+    margin-bottom:25px;
+
+    filter:
+        drop-shadow(0 0 20px rgba(0,225,255,.40))
+        drop-shadow(0 0 45px rgba(137,54,255,.25));
+}
+
+.small-title{
     display:inline-block;
-    padding:9px 16px;
-    border-radius:999px;
-    border:1px solid rgba(0,229,255,.25);
-    background:rgba(0,229,255,.07);
-    color:#77efff;
-    font-size:13px;
-    letter-spacing:2px;
-    margin-bottom:20px;
+
+    margin-bottom:18px;
+
+    padding:9px 17px;
+
+    border-radius:50px;
+
+    border:
+        1px solid rgba(0,229,255,.25);
+
+    background:
+        rgba(0,229,255,.06);
+
+    color:#71efff;
+
+    letter-spacing:3px;
+
+    font-size:12px;
 }
 
 h1{
-    font-size:clamp(42px,7vw,82px);
+    font-size:clamp(44px,8vw,88px);
+
     line-height:1;
-    margin-bottom:20px;
+
     font-weight:900;
-    background:linear-gradient(90deg,#ffffff,#66eaff,#8c52ff,#ff00dc);
+
+    margin-bottom:22px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #00eaff,
+            #6f7aff,
+            #9e44ff,
+            #fb00ff
+        );
+
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
+
+    text-shadow:
+        0 0 40px rgba(0,229,255,.05);
 }
 
-.hero-text p{
-    color:#aeb9d4;
-    line-height:1.8;
+.hero-content p{
+    max-width:850px;
+    margin:auto;
+
     font-size:18px;
+    line-height:1.8;
+
+    color:#aebbd8;
 }
 
 .buttons{
-    margin-top:30px;
+    margin-top:32px;
+
     display:flex;
-    justify-content:center;
-    gap:15px;
     flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:14px;
 }
 
 .btn{
-    display:inline-block;
-    padding:15px 24px;
-    border-radius:12px;
+    padding:15px 25px;
+
+    border-radius:13px;
+
     text-decoration:none;
-    font-weight:bold;
+
+    font-weight:800;
+
     transition:.25s;
-}
-
-.btn-primary{
-    color:#001018;
-    background:linear-gradient(90deg,#00eaff,#7770ff);
-    box-shadow:0 0 25px rgba(0,229,255,.28);
-}
-
-.btn-secondary{
-    color:white;
-    border:1px solid rgba(141,95,255,.4);
-    background:rgba(255,255,255,.04);
 }
 
 .btn:hover{
     transform:translateY(-3px);
 }
 
+.btn-primary{
+    color:#00131c;
+
+    background:
+        linear-gradient(
+            90deg,
+            #00eaff,
+            #7376ff
+        );
+
+    box-shadow:
+        0 0 27px rgba(0,229,255,.28);
+}
+
+.btn-wallet{
+    color:white;
+
+    background:
+        linear-gradient(
+            90deg,
+            #5625ff,
+            #a600ff
+        );
+
+    box-shadow:
+        0 0 27px rgba(128,53,255,.25);
+}
+
+.btn-outline{
+    color:white;
+
+    border:
+        1px solid rgba(0,229,255,.28);
+
+    background:
+        rgba(255,255,255,.04);
+}
+
+/* =========================
+   GENERAL
+========================= */
+
 section{
     max-width:1200px;
     margin:auto;
+
     padding:90px 22px;
 }
 
 .section-title{
     text-align:center;
-    margin-bottom:50px;
+
+    margin-bottom:48px;
 }
 
 .section-title small{
     color:#00eaff;
-    letter-spacing:3px;
+
+    letter-spacing:4px;
+
+    font-size:12px;
 }
 
 .section-title h2{
-    font-size:clamp(32px,5vw,52px);
     margin-top:12px;
+
+    font-size:
+        clamp(32px,5vw,52px);
 }
 
 .section-title p{
-    max-width:750px;
+    max-width:760px;
+
     margin:15px auto 0;
-    color:#9ea9c4;
+
+    color:#9eabc8;
+
     line-height:1.7;
+
+    font-size:17px;
 }
+
+/* =========================
+   CARDS
+========================= */
 
 .grid{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:21px;
 }
 
 .card{
-    padding:30px;
-    border-radius:20px;
+    padding:31px;
+
+    border-radius:22px;
+
+    border:
+        1px solid rgba(80,145,255,.20);
+
     background:
-        linear-gradient(145deg,rgba(13,23,56,.88),rgba(6,8,25,.92));
-    border:1px solid rgba(87,151,255,.18);
-    box-shadow:0 20px 50px rgba(0,0,0,.28);
-    transition:.3s;
+        radial-gradient(
+            circle at top right,
+            rgba(121,63,255,.11),
+            transparent 35%
+        ),
+        linear-gradient(
+            145deg,
+            rgba(12,22,54,.88),
+            rgba(5,8,24,.94)
+        );
+
+    box-shadow:
+        0 18px 55px rgba(0,0,0,.30);
+
+    transition:.30s;
 }
 
 .card:hover{
-    transform:translateY(-5px);
-    border-color:rgba(0,229,255,.45);
-    box-shadow:0 20px 50px rgba(0,229,255,.08);
+    transform:translateY(-6px);
+
+    border-color:
+        rgba(0,229,255,.46);
+
+    box-shadow:
+        0 20px 60px
+        rgba(0,229,255,.07);
 }
 
 .icon{
-    font-size:40px;
-    margin-bottom:18px;
+    font-size:42px;
+    margin-bottom:19px;
 }
 
 .card h3{
-    color:#fff;
     font-size:21px;
     margin-bottom:10px;
 }
 
 .card p{
-    color:#9faac5;
+    color:#9faac4;
+
     line-height:1.7;
 }
 
-.highlight{
-    border-radius:28px;
-    padding:45px;
+/* =========================
+   BIG PANELS
+========================= */
+
+.panel{
+    padding:48px;
+
+    border-radius:29px;
+
+    border:
+        1px solid rgba(0,229,255,.18);
+
     background:
-        radial-gradient(circle at right top,rgba(118,53,255,.22),transparent 35%),
-        linear-gradient(135deg,rgba(0,229,255,.08),rgba(124,77,255,.10));
-    border:1px solid rgba(0,229,255,.18);
-    box-shadow:0 0 60px rgba(0,229,255,.06);
+        radial-gradient(
+            circle at top right,
+            rgba(119,40,255,.22),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at bottom left,
+            rgba(0,208,255,.10),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            rgba(11,19,45,.94),
+            rgba(4,7,21,.94)
+        );
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.35);
 }
 
-.highlight h2{
-    font-size:42px;
-    margin-bottom:20px;
+.panel h2{
+    font-size:
+        clamp(32px,5vw,48px);
+
+    margin-bottom:19px;
 }
 
-.highlight p{
-    color:#b4bed7;
+.panel p{
+    color:#b0bdd8;
+
     line-height:1.8;
+
     font-size:17px;
 }
 
-.reward{
-    margin-top:30px;
-    font-size:clamp(36px,7vw,70px);
+.reward-number{
+    margin:20px 0;
+
+    font-size:
+        clamp(48px,9vw,90px);
+
     font-weight:900;
-    background:linear-gradient(90deg,#00eaff,#854cff,#ff00e6);
+
+    background:
+        linear-gradient(
+            90deg,
+            #00efff,
+            #7358ff,
+            #df00ff
+        );
+
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
 }
 
+/* =========================
+   WALLET
+========================= */
+
+.wallet-box{
+    text-align:center;
+}
+
+.wallet-logo{
+    width:150px;
+
+    margin-bottom:24px;
+
+    filter:
+        drop-shadow(
+            0 0 25px
+            rgba(0,229,255,.35)
+        );
+}
+
+/* =========================
+   STEPS
+========================= */
+
 .steps{
     display:grid;
-    grid-template-columns:repeat(4,1fr);
+
+    grid-template-columns:
+        repeat(4,1fr);
+
     gap:18px;
 }
 
 .step{
-    position:relative;
     text-align:center;
-    padding:30px 20px;
-    background:rgba(10,16,40,.7);
-    border-radius:18px;
-    border:1px solid rgba(130,90,255,.20);
+
+    padding:30px 21px;
+
+    border-radius:20px;
+
+    border:
+        1px solid
+        rgba(119,90,255,.22);
+
+    background:
+        rgba(9,15,38,.75);
 }
 
 .number{
-    width:44px;
-    height:44px;
-    line-height:44px;
+    width:47px;
+    height:47px;
+
     margin:0 auto 18px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
     border-radius:50%;
-    font-weight:bold;
-    color:#03131a;
-    background:linear-gradient(135deg,#00eaff,#9f5cff);
+
+    color:#001118;
+
+    font-weight:900;
+
+    background:
+        linear-gradient(
+            135deg,
+            #00eaff,
+            #a55bff
+        );
+
+    box-shadow:
+        0 0 18px
+        rgba(0,229,255,.24);
 }
 
 .step h3{
-    margin-bottom:10px;
+    margin-bottom:11px;
 }
 
 .step p{
-    color:#9ea9c4;
-    line-height:1.6;
+    color:#9eabc8;
+
+    line-height:1.65;
 }
 
-.warning{
+/* =========================
+   WARNING
+========================= */
+
+.notice{
     margin-top:35px;
-    padding:22px;
-    border-left:4px solid #00eaff;
-    background:rgba(0,229,255,.06);
-    color:#b7c3dd;
+
+    padding:22px 24px;
+
+    border-radius:14px;
+
+    border-left:
+        4px solid #00eaff;
+
+    background:
+        rgba(0,229,255,.06);
+
+    color:#b9c7e4;
+
     line-height:1.7;
-    border-radius:10px;
 }
+
+/* =========================
+   12 HOURS
+========================= */
+
+.hours{
+    text-align:center;
+}
+
+.hours-number{
+    font-size:
+        clamp(70px,15vw,150px);
+
+    font-weight:900;
+
+    line-height:1;
+
+    background:
+        linear-gradient(
+            90deg,
+            #00eaff,
+            #974cff,
+            #ff00db
+        );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+/* =========================
+   FOOTER
+========================= */
 
 footer{
-    margin-top:70px;
-    border-top:1px solid rgba(255,255,255,.08);
+    margin-top:60px;
+
+    padding:50px 20px;
+
     text-align:center;
-    padding:45px 20px;
-    color:#7885a4;
+
+    border-top:
+        1px solid rgba(255,255,255,.08);
+
+    color:#7785a5;
 }
 
 footer strong{
     color:#00eaff;
 }
 
-@media(max-width:900px){
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:950px){
+
     .grid{
         grid-template-columns:1fr;
     }
@@ -314,285 +679,1493 @@ footer strong{
     .nav-links{
         display:none;
     }
+
 }
 
-@media(max-width:600px){
+@media(max-width:650px){
+
+    .nav{
+        align-items:center;
+    }
+
+    .brand-name{
+        display:none;
+    }
+
+    .right-menu{
+        gap:8px;
+    }
+
+    .lang-btn{
+        width:35px;
+        height:34px;
+
+        font-size:18px;
+    }
+
     .steps{
         grid-template-columns:1fr;
     }
 
-    .highlight{
-        padding:28px 20px;
+    .panel{
+        padding:30px 21px;
     }
 
     .hero{
         padding-left:10px;
         padding-right:10px;
     }
+
 }
+
 </style>
 </head>
 
 <body>
 
+
 <header>
-    <div class="nav">
-        <div class="logo">BANK 2.0 • MINING</div>
+
+<div class="nav">
+
+    <div class="brand">
+
+        <img
+        src="logo_minado_bank2.png"
+        alt="BANK 2.0 MINING">
+
+        <div class="brand-name">
+            BANK 2.0 • MINING
+        </div>
+
+    </div>
+
+
+    <div class="right-menu">
 
         <div class="nav-links">
-            <a href="#about">About</a>
-            <a href="#eco">Eco Mining</a>
-            <a href="#rewards">Rewards</a>
-            <a href="#start">How to Start</a>
+
+            <a href="#about"
+            data-i18n="menuAbout">
+            Proyecto
+            </a>
+
+            <a href="#eco"
+            data-i18n="menuEco">
+            Ecología
+            </a>
+
+            <a href="#rewards"
+            data-i18n="menuRewards">
+            Recompensas
+            </a>
+
+            <a href="#start"
+            data-i18n="menuStart">
+            Comenzar
+            </a>
+
         </div>
+
+
+        <div class="languages">
+
+            <button
+            class="lang-btn active"
+            data-lang="es"
+            title="Español">
+            🇪🇸
+            </button>
+
+            <button
+            class="lang-btn"
+            data-lang="en"
+            title="English">
+            🇬🇧
+            </button>
+
+            <button
+            class="lang-btn"
+            data-lang="de"
+            title="Deutsch">
+            🇩🇪
+            </button>
+
+            <button
+            class="lang-btn"
+            data-lang="zh"
+            title="中文">
+            🇨🇳
+            </button>
+
+        </div>
+
     </div>
+
+</div>
+
 </header>
 
 
+
+<main>
+
+
+<!-- HERO -->
+
 <div class="hero">
 
-    <img src="banert.png" alt="BANK 2.0 Blockchain Ecosystem">
+    <img
+    class="banner"
+    src="banert.png"
+    alt="BANK 2.0 Ecosystem">
 
-    <div class="hero-text">
 
-        <div class="badge">
-            MAXSTUDIO • BANK 2.0 ECOSYSTEM
+    <div class="hero-content">
+
+        <img
+        class="main-logo"
+        src="logo_minado_bank2.png"
+        alt="BANK 2.0 MINING Logo">
+
+
+        <div
+        class="small-title"
+        data-i18n="heroBadge">
+
+        MAXSTUDIO • BANK 2.0 ECOSYSTEM
+
         </div>
 
-        <h1>BANK 2.0 MINING</h1>
 
-        <p>
-            A different way to understand cloud mining.
-            BANK 2.0 MINING was created to introduce more people
-            to the concept of digital mining while promoting a more
-            responsible approach to technology and the environment.
+        <h1>
+            BANK 2.0<br>
+            MINING
+        </h1>
+
+
+        <p
+        data-i18n="heroText">
+
+        Una forma sencilla de descubrir el concepto
+        de minería en la nube y participar en el
+        ecosistema BANK 2.0, sin convertir tu teléfono
+        en una máquina de minería intensiva.
+
         </p>
 
+
         <div class="buttons">
-            <a class="btn btn-primary" href="#start">Start Mining</a>
-            <a class="btn btn-secondary" href="#eco">Discover the Project</a>
+
+            <a
+            class="btn btn-primary"
+            href="#start"
+            data-i18n="startNow">
+
+            Comenzar ahora
+
+            </a>
+
+
+            <a
+            class="btn btn-wallet"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://play.google.com/store/apps/details?id=vargas.maximo.walletbank20"
+            data-i18n="downloadWallet">
+
+            Descargar BANK 2.0 - WALLET
+
+            </a>
+
+
+            <a
+            class="btn btn-outline"
+            href="#eco"
+            data-i18n="learnMore">
+
+            Conocer el proyecto
+
+            </a>
+
         </div>
 
     </div>
+
 </div>
 
 
+
+<!-- ABOUT -->
+
 <section id="about">
 
-    <div class="section-title">
-        <small>MORE THAN MINING</small>
-        <h2>Learn. Participate. Earn.</h2>
+<div class="section-title">
 
-        <p>
-            BANK 2.0 MINING gives users a simple way to experience
-            how a cloud mining reward system can work without needing
-            expensive mining equipment or complicated configurations.
-        </p>
+    <small
+    data-i18n="aboutSmall">
+
+    UNA NUEVA EXPERIENCIA
+
+    </small>
+
+    <h2
+    data-i18n="aboutTitle">
+
+    Descubre la minería de otra manera
+
+    </h2>
+
+    <p
+    data-i18n="aboutText">
+
+    BANK 2.0 MINING nace con la idea de acercar
+    el concepto de minería y recompensas blockchain
+    a más personas de una forma sencilla,
+    accesible y responsable.
+
+    </p>
+
+</div>
+
+
+<div class="grid">
+
+
+<div class="card">
+
+    <div class="icon">
+        ☁️
     </div>
 
-    <div class="grid">
+    <h3
+    data-i18n="cloudTitle">
 
-        <div class="card">
-            <div class="icon">☁️</div>
-            <h3>Cloud Based</h3>
-            <p>
-                The experience is managed remotely.
-                Your phone does not need to perform intensive
-                cryptocurrency mining calculations.
-            </p>
-        </div>
+    Experiencia en la nube
 
-        <div class="card">
-            <div class="icon">🌱</div>
-            <h3>Environmental Responsibility</h3>
-            <p>
-                BANK 2.0 believes technology should continue advancing
-                without forgetting our responsibility to the planet.
-            </p>
-        </div>
+    </h3>
 
-        <div class="card">
-            <div class="icon">⚡</div>
-            <h3>No Heavy Device Usage</h3>
-            <p>
-                No GPU farms inside your phone, no excessive processor usage
-                and no need to leave your device performing intensive mining operations.
-            </p>
-        </div>
+    <p
+    data-i18n="cloudText">
 
+    La experiencia se gestiona de forma remota.
+    Tu móvil no necesita realizar cálculos
+    criptográficos intensivos.
+
+    </p>
+
+</div>
+
+
+
+<div class="card">
+
+    <div class="icon">
+        🌍
     </div>
+
+    <h3
+    data-i18n="planetTitle">
+
+    Pensando en el planeta
+
+    </h3>
+
+    <p
+    data-i18n="planetText">
+
+    BANK 2.0 cree que la innovación tecnológica
+    debe avanzar sin olvidar nuestra responsabilidad
+    con el medio ambiente.
+
+    </p>
+
+</div>
+
+
+
+<div class="card">
+
+    <div class="icon">
+        📱
+    </div>
+
+    <h3
+    data-i18n="phoneTitle">
+
+    Sin castigar tu móvil
+
+    </h3>
+
+    <p
+    data-i18n="phoneText">
+
+    No necesitas una GPU especializada ni utilizar
+    continuamente el procesador de tu teléfono
+    para participar.
+
+    </p>
+
+</div>
+
+
+</div>
 
 </section>
 
+
+
+<!-- ECO -->
 
 <section id="eco">
 
-    <div class="highlight">
+<div class="panel">
 
-        <h2>A More Responsible Vision of Mining</h2>
+    <h2
+    data-i18n="ecoTitle">
 
-        <p>
-            Traditional cryptocurrency mining can require large amounts
-            of electricity and specialized hardware.
-        </p>
+    Tecnología con responsabilidad ambiental
 
-        <br>
+    </h2>
 
-        <p>
-            BANK 2.0 MINING wants users to discover the idea of mining
-            from another perspective: a simple cloud-based reward experience
-            focused on accessibility, education and environmental responsibility.
-        </p>
 
-        <br>
+    <p
+    data-i18n="eco1">
 
-        <p>
-            The goal is not to turn your mobile phone into a mining machine.
-            The goal is to show that blockchain technology can continue evolving
-            while exploring more efficient and responsible models.
-        </p>
+    La minería tradicional puede necesitar grandes
+    cantidades de electricidad y equipos especializados.
 
-    </div>
+    </p>
+
+    <br>
+
+
+    <p
+    data-i18n="eco2">
+
+    BANK 2.0 MINING quiere mostrar que el concepto
+    de minería y recompensas digitales también puede
+    abordarse desde una visión diferente:
+    accesible, educativa y más responsable.
+
+    </p>
+
+    <br>
+
+
+    <p
+    data-i18n="eco3">
+
+    Nuestra idea no es convertir millones de teléfonos
+    en máquinas trabajando al máximo.
+    Queremos acercar a los usuarios al mundo blockchain
+    mientras promovemos una visión más eficiente
+    de la tecnología.
+
+    </p>
+
+</div>
 
 </section>
 
+
+
+<!-- REWARDS -->
 
 <section id="rewards">
 
-    <div class="section-title">
-        <small>COMMUNITY REWARDS</small>
-        <h2>500,000 BANK 2.0 Tokens</h2>
 
-        <p>
-            A reward pool has been allocated to help more users discover
-            BANK 2.0 and participate in the ecosystem.
-        </p>
+<div class="section-title">
+
+    <small
+    data-i18n="rewardSmall">
+
+    PARA LA COMUNIDAD
+
+    </small>
+
+
+    <h2
+    data-i18n="rewardTitle">
+
+    Recompensas BANK 2.0
+
+    </h2>
+
+
+    <p
+    data-i18n="rewardIntro">
+
+    BANK 2.0 quiere que más personas puedan conocer
+    el proyecto y experimentar cómo funciona
+    un sistema de recompensas blockchain.
+
+    </p>
+
+</div>
+
+
+
+<div class="panel">
+
+    <p
+    data-i18n="allocated">
+
+    Aproximadamente
+
+    </p>
+
+
+    <div class="reward-number">
+
+        500,000 B20
+
     </div>
 
-    <div class="highlight">
 
-        <p>
-            Approximately
-        </p>
+    <p
+    data-i18n="rewardText">
 
-        <div class="reward">
-            500,000 B20
-        </div>
+    han sido destinados al programa de recompensas
+    de la comunidad BANK 2.0 MINING.
+    El objetivo es llegar a nuevos usuarios,
+    enseñar cómo funciona el ecosistema
+    y repartir parte de estos tokens
+    entre los participantes.
 
-        <p>
-            have been allocated for community rewards.
-            The purpose is to distribute rewards among users,
-            introduce new people to the BANK 2.0 ecosystem
-            and help the project reach a larger community.
-        </p>
+    </p>
 
-        <div class="warning">
-            Rewards are subject to the availability of the community reward pool
-            and the conditions established by BANK 2.0.
-        </div>
+
+    <div
+    class="notice"
+    data-i18n="rewardNotice">
+
+    Las recompensas dependen de la disponibilidad
+    del fondo comunitario y de las condiciones
+    vigentes del programa BANK 2.0 MINING.
 
     </div>
+
+</div>
 
 </section>
 
+
+
+<!-- WALLET -->
+
+<section id="wallet">
+
+<div class="panel wallet-box">
+
+    <img
+    src="logo_minado_bank2.png"
+    class="wallet-logo"
+    alt="BANK 2.0">
+
+
+    <h2
+    data-i18n="walletTitle">
+
+    Necesitas una dirección pública de Solana
+
+    </h2>
+
+
+    <p
+    data-i18n="walletText">
+
+    Puedes utilizar BANK 2.0 - WALLET
+    o cualquier cartera compatible con Solana,
+    como Phantom, Trust Wallet o MetaMask
+    si dispone de soporte para la red correspondiente.
+
+    </p>
+
+
+    <div class="buttons">
+
+        <a
+        href="https://play.google.com/store/apps/details?id=vargas.maximo.walletbank20"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-wallet"
+        data-i18n="officialWallet">
+
+        BANK 2.0 - WALLET OFICIAL
+
+        </a>
+
+    </div>
+
+</div>
+
+</section>
+
+
+
+<!-- START -->
 
 <section id="start">
 
-    <div class="section-title">
-        <small>GET STARTED</small>
-        <h2>Start in a Few Steps</h2>
 
-        <p>
-            You only need a Solana-compatible wallet address.
-            No complicated configuration is required.
-        </p>
+<div class="section-title">
+
+    <small
+    data-i18n="startSmall">
+
+    EMPIEZA EN MINUTOS
+
+    </small>
+
+
+    <h2
+    data-i18n="startTitle">
+
+    Así de sencillo
+
+    </h2>
+
+
+    <p
+    data-i18n="startText">
+
+    No necesitas conocimientos avanzados.
+    Solo una dirección pública de Solana.
+
+    </p>
+
+</div>
+
+
+
+<div class="steps">
+
+
+<div class="step">
+
+    <div class="number">
+        1
     </div>
 
-    <div class="steps">
+    <h3
+    data-i18n="step1Title">
 
-        <div class="step">
-            <div class="number">1</div>
-            <h3>Choose a Wallet</h3>
-            <p>
-                Use a compatible wallet such as BANK 2.0 - WALLET,
-                Trust Wallet, MetaMask or Phantom.
-            </p>
-        </div>
+    Busca una wallet
 
-        <div class="step">
-            <div class="number">2</div>
-            <h3>Get Your Solana Address</h3>
-            <p>
-                Create a Solana account inside your wallet,
-                or copy your existing Solana public address.
-            </p>
-        </div>
+    </h3>
 
-        <div class="step">
-            <div class="number">3</div>
-            <h3>Save Your Address</h3>
-            <p>
-                Paste your public Solana wallet address
-                inside BANK 2.0 MINING and press Save.
-            </p>
-        </div>
+    <p
+    data-i18n="step1Text">
 
-        <div class="step">
-            <div class="number">4</div>
-            <h3>Start</h3>
-            <p>
-                Start the mining experience.
-                Each completed 12-hour cycle can generate
-                a BANK 2.0 reward.
-            </p>
-        </div>
+    Puedes utilizar BANK 2.0 - WALLET,
+    Phantom, Trust Wallet,
+    MetaMask u otra cartera compatible.
 
+    </p>
+
+</div>
+
+
+
+<div class="step">
+
+    <div class="number">
+        2
     </div>
 
-    <div class="warning">
-        Never enter your seed phrase, private key or wallet password.
-        BANK 2.0 MINING only requires your PUBLIC Solana wallet address
-        to identify where eligible rewards can be sent.
+    <h3
+    data-i18n="step2Title">
+
+    Abre Solana
+
+    </h3>
+
+    <p
+    data-i18n="step2Text">
+
+    Crea una cuenta de Solana
+    o abre la que ya tengas
+    dentro de tu wallet.
+
+    </p>
+
+</div>
+
+
+
+<div class="step">
+
+    <div class="number">
+        3
     </div>
+
+    <h3
+    data-i18n="step3Title">
+
+    Copia tu dirección
+
+    </h3>
+
+    <p
+    data-i18n="step3Text">
+
+    Copia solamente tu dirección
+    pública de Solana y pégala
+    en BANK 2.0 MINING.
+
+    </p>
+
+</div>
+
+
+
+<div class="step">
+
+    <div class="number">
+        4
+    </div>
+
+    <h3
+    data-i18n="step4Title">
+
+    Guarda y comienza
+
+    </h3>
+
+    <p
+    data-i18n="step4Text">
+
+    Pulsa Guardar,
+    inicia tu ciclo
+    y comienza tu experiencia
+    BANK 2.0 MINING.
+
+    </p>
+
+</div>
+
+
+</div>
+
+
+
+<div
+class="notice"
+data-i18n="securityNotice">
+
+IMPORTANTE: BANK 2.0 MINING únicamente necesita
+tu dirección PÚBLICA de Solana.
+Nunca introduzcas tu frase semilla,
+clave privada ni contraseña de tu wallet.
+
+</div>
+
 
 </section>
 
+
+
+<!-- 12 HOURS -->
 
 <section>
 
-    <div class="highlight" style="text-align:center">
+<div class="panel hours">
 
-        <h2>Every 12 Hours. One New Opportunity.</h2>
-
-        <p>
-            Keep participating, complete your mining cycles
-            and become part of the growing BANK 2.0 community.
-        </p>
-
-        <br>
-
-        <p>
-            No specialized mining hardware.<br>
-            No intensive mobile GPU mining.<br>
-            No complicated setup.
-        </p>
-
-        <div class="buttons">
-            <a class="btn btn-primary" href="#start">
-                Begin Your Journey
-            </a>
-        </div>
-
+    <div class="hours-number">
+        12H
     </div>
+
+    <h2
+    data-i18n="hoursTitle">
+
+    Un nuevo ciclo cada 12 horas
+
+    </h2>
+
+    <p
+    data-i18n="hoursText">
+
+    Completa cada ciclo disponible
+    y podrás recibir una recompensa
+    BANK 2.0 según las condiciones
+    vigentes del programa.
+
+    </p>
+
+</div>
 
 </section>
 
 
+
+<!-- FINAL -->
+
+<section>
+
+<div class="panel wallet-box">
+
+    <h2
+    data-i18n="futureTitle">
+
+    BANK 2.0 es más que un token
+
+    </h2>
+
+
+    <p
+    data-i18n="futureText">
+
+    Tecnología, comunidad, innovación
+    y una visión de futuro donde blockchain
+    pueda llegar a más personas
+    de una manera sencilla y responsable.
+
+    </p>
+
+
+    <div class="buttons">
+
+        <a
+        class="btn btn-wallet"
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://play.google.com/store/apps/details?id=vargas.maximo.walletbank20"
+        data-i18n="getWallet">
+
+        Obtener BANK 2.0 - WALLET
+
+        </a>
+
+    </div>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+
 <footer>
-    © 2026 <strong>MaxStudio</strong> · BANK 2.0 MINING
-    <br><br>
-    Part of the BANK 2.0 ecosystem.
+
+© 2026
+<strong>MaxStudio</strong>
+
+<br><br>
+
+<span
+data-i18n="footerText">
+
+BANK 2.0 MINING • Parte del ecosistema BANK 2.0
+
+</span>
+
 </footer>
+
+
+
+<script>
+
+/* =========================
+   TRANSLATIONS
+========================= */
+
+const translations = {
+
+
+/* =========================
+   SPANISH
+========================= */
+
+es:{
+
+menuAbout:"Proyecto",
+menuEco:"Ecología",
+menuRewards:"Recompensas",
+menuStart:"Comenzar",
+
+heroBadge:"MAXSTUDIO • ECOSISTEMA BANK 2.0",
+
+heroText:
+"Una forma sencilla de descubrir el concepto de minería en la nube y participar en el ecosistema BANK 2.0, sin convertir tu teléfono en una máquina de minería intensiva.",
+
+startNow:"Comenzar ahora",
+
+downloadWallet:
+"Descargar BANK 2.0 - WALLET",
+
+learnMore:
+"Conocer el proyecto",
+
+aboutSmall:
+"UNA NUEVA EXPERIENCIA",
+
+aboutTitle:
+"Descubre la minería de otra manera",
+
+aboutText:
+"BANK 2.0 MINING nace con la idea de acercar el concepto de minería y recompensas blockchain a más personas de una forma sencilla, accesible y responsable.",
+
+cloudTitle:
+"Experiencia en la nube",
+
+cloudText:
+"La experiencia se gestiona de forma remota. Tu móvil no necesita realizar cálculos criptográficos intensivos.",
+
+planetTitle:
+"Pensando en el planeta",
+
+planetText:
+"BANK 2.0 cree que la innovación tecnológica debe avanzar sin olvidar nuestra responsabilidad con el medio ambiente.",
+
+phoneTitle:
+"Sin castigar tu móvil",
+
+phoneText:
+"No necesitas una GPU especializada ni utilizar continuamente el procesador de tu teléfono para participar.",
+
+ecoTitle:
+"Tecnología con responsabilidad ambiental",
+
+eco1:
+"La minería tradicional puede necesitar grandes cantidades de electricidad y equipos especializados.",
+
+eco2:
+"BANK 2.0 MINING quiere mostrar que el concepto de minería y recompensas digitales también puede abordarse desde una visión diferente: accesible, educativa y más responsable.",
+
+eco3:
+"Nuestra idea no es convertir millones de teléfonos en máquinas trabajando al máximo. Queremos acercar a los usuarios al mundo blockchain mientras promovemos una visión más eficiente de la tecnología.",
+
+rewardSmall:
+"PARA LA COMUNIDAD",
+
+rewardTitle:
+"Recompensas BANK 2.0",
+
+rewardIntro:
+"BANK 2.0 quiere que más personas puedan conocer el proyecto y experimentar cómo funciona un sistema de recompensas blockchain.",
+
+allocated:
+"Aproximadamente",
+
+rewardText:
+"han sido destinados al programa de recompensas de la comunidad BANK 2.0 MINING. El objetivo es llegar a nuevos usuarios, enseñar cómo funciona el ecosistema y repartir parte de estos tokens entre los participantes.",
+
+rewardNotice:
+"Las recompensas dependen de la disponibilidad del fondo comunitario y de las condiciones vigentes del programa BANK 2.0 MINING.",
+
+walletTitle:
+"Necesitas una dirección pública de Solana",
+
+walletText:
+"Puedes utilizar BANK 2.0 - WALLET o cualquier cartera compatible con Solana, como Phantom, Trust Wallet o MetaMask si dispone de soporte para la red correspondiente.",
+
+officialWallet:
+"BANK 2.0 - WALLET OFICIAL",
+
+startSmall:
+"EMPIEZA EN MINUTOS",
+
+startTitle:
+"Así de sencillo",
+
+startText:
+"No necesitas conocimientos avanzados. Solo una dirección pública de Solana.",
+
+step1Title:
+"Busca una wallet",
+
+step1Text:
+"Puedes utilizar BANK 2.0 - WALLET, Phantom, Trust Wallet, MetaMask u otra cartera compatible.",
+
+step2Title:
+"Abre Solana",
+
+step2Text:
+"Crea una cuenta de Solana o abre la que ya tengas dentro de tu wallet.",
+
+step3Title:
+"Copia tu dirección",
+
+step3Text:
+"Copia solamente tu dirección pública de Solana y pégala en BANK 2.0 MINING.",
+
+step4Title:
+"Guarda y comienza",
+
+step4Text:
+"Pulsa Guardar, inicia tu ciclo y comienza tu experiencia BANK 2.0 MINING.",
+
+securityNotice:
+"IMPORTANTE: BANK 2.0 MINING únicamente necesita tu dirección PÚBLICA de Solana. Nunca introduzcas tu frase semilla, clave privada ni contraseña de tu wallet.",
+
+hoursTitle:
+"Un nuevo ciclo cada 12 horas",
+
+hoursText:
+"Completa cada ciclo disponible y podrás recibir una recompensa BANK 2.0 según las condiciones vigentes del programa.",
+
+futureTitle:
+"BANK 2.0 es más que un token",
+
+futureText:
+"Tecnología, comunidad, innovación y una visión de futuro donde blockchain pueda llegar a más personas de una manera sencilla y responsable.",
+
+getWallet:
+"Obtener BANK 2.0 - WALLET",
+
+footerText:
+"BANK 2.0 MINING • Parte del ecosistema BANK 2.0"
+
+},
+
+
+
+/* =========================
+   ENGLISH
+========================= */
+
+en:{
+
+menuAbout:"Project",
+menuEco:"Environment",
+menuRewards:"Rewards",
+menuStart:"Get Started",
+
+heroBadge:"MAXSTUDIO • BANK 2.0 ECOSYSTEM",
+
+heroText:
+"A simple way to discover the concept of cloud mining and participate in the BANK 2.0 ecosystem without turning your phone into an intensive mining machine.",
+
+startNow:"Start now",
+
+downloadWallet:
+"Download BANK 2.0 - WALLET",
+
+learnMore:
+"Discover the project",
+
+aboutSmall:
+"A NEW EXPERIENCE",
+
+aboutTitle:
+"Discover mining in a different way",
+
+aboutText:
+"BANK 2.0 MINING was created to introduce the concept of mining and blockchain rewards to more people in a simple, accessible and responsible way.",
+
+cloudTitle:
+"Cloud Experience",
+
+cloudText:
+"The experience is managed remotely. Your phone does not need to perform intensive cryptographic calculations.",
+
+planetTitle:
+"Thinking About the Planet",
+
+planetText:
+"BANK 2.0 believes technological innovation should continue without forgetting our responsibility to the environment.",
+
+phoneTitle:
+"No Heavy Phone Usage",
+
+phoneText:
+"You do not need a specialized GPU or continuous intensive processor use to participate.",
+
+ecoTitle:
+"Technology With Environmental Responsibility",
+
+eco1:
+"Traditional mining can require large amounts of electricity and specialized hardware.",
+
+eco2:
+"BANK 2.0 MINING wants to show that the concept of mining and digital rewards can also be approached from a different perspective: accessible, educational and more responsible.",
+
+eco3:
+"Our idea is not to turn millions of phones into machines running at maximum power. We want to introduce users to blockchain while promoting a more efficient vision of technology.",
+
+rewardSmall:
+"FOR THE COMMUNITY",
+
+rewardTitle:
+"BANK 2.0 Rewards",
+
+rewardIntro:
+"BANK 2.0 wants more people to discover the project and experience how a blockchain reward system works.",
+
+allocated:
+"Approximately",
+
+rewardText:
+"have been allocated to the BANK 2.0 MINING community rewards program. The goal is to reach new users, teach people about the ecosystem and distribute part of these tokens among participants.",
+
+rewardNotice:
+"Rewards depend on the availability of the community reward pool and the current conditions of the BANK 2.0 MINING program.",
+
+walletTitle:
+"You Need a Public Solana Address",
+
+walletText:
+"You can use BANK 2.0 - WALLET or another Solana-compatible wallet such as Phantom, Trust Wallet or MetaMask where the corresponding network is supported.",
+
+officialWallet:
+"OFFICIAL BANK 2.0 - WALLET",
+
+startSmall:
+"START IN MINUTES",
+
+startTitle:
+"It's That Simple",
+
+startText:
+"You do not need advanced knowledge. You only need a public Solana address.",
+
+step1Title:
+"Choose a Wallet",
+
+step1Text:
+"You can use BANK 2.0 - WALLET, Phantom, Trust Wallet, MetaMask or another compatible wallet.",
+
+step2Title:
+"Open Solana",
+
+step2Text:
+"Create a Solana account or open your existing Solana account inside your wallet.",
+
+step3Title:
+"Copy Your Address",
+
+step3Text:
+"Copy only your public Solana address and paste it into BANK 2.0 MINING.",
+
+step4Title:
+"Save and Start",
+
+step4Text:
+"Press Save, start your cycle and begin your BANK 2.0 MINING experience.",
+
+securityNotice:
+"IMPORTANT: BANK 2.0 MINING only needs your PUBLIC Solana address. Never enter your seed phrase, private key or wallet password.",
+
+hoursTitle:
+"A New Cycle Every 12 Hours",
+
+hoursText:
+"Complete each available cycle and you may receive a BANK 2.0 reward according to the current conditions of the program.",
+
+futureTitle:
+"BANK 2.0 Is More Than a Token",
+
+futureText:
+"Technology, community, innovation and a vision of a future where blockchain can reach more people in a simple and responsible way.",
+
+getWallet:
+"Get BANK 2.0 - WALLET",
+
+footerText:
+"BANK 2.0 MINING • Part of the BANK 2.0 ecosystem"
+
+},
+
+
+
+/* =========================
+   GERMAN
+========================= */
+
+de:{
+
+menuAbout:"Projekt",
+menuEco:"Umwelt",
+menuRewards:"Belohnungen",
+menuStart:"Starten",
+
+heroBadge:"MAXSTUDIO • BANK 2.0 ÖKOSYSTEM",
+
+heroText:
+"Eine einfache Möglichkeit, das Konzept des Cloud-Minings kennenzulernen und am BANK 2.0 Ökosystem teilzunehmen, ohne das Smartphone in eine intensive Mining-Maschine zu verwandeln.",
+
+startNow:"Jetzt starten",
+
+downloadWallet:
+"BANK 2.0 - WALLET herunterladen",
+
+learnMore:
+"Projekt entdecken",
+
+aboutSmall:
+"EINE NEUE ERFAHRUNG",
+
+aboutTitle:
+"Mining auf eine andere Art entdecken",
+
+aboutText:
+"BANK 2.0 MINING wurde entwickelt, um das Konzept von Mining und Blockchain-Belohnungen auf einfache, zugängliche und verantwortungsvolle Weise mehr Menschen näherzubringen.",
+
+cloudTitle:
+"Cloud-Erlebnis",
+
+cloudText:
+"Die Erfahrung wird remote verwaltet. Ihr Smartphone muss keine intensiven kryptografischen Berechnungen durchführen.",
+
+planetTitle:
+"Für unseren Planeten",
+
+planetText:
+"BANK 2.0 ist überzeugt, dass technologische Innovation voranschreiten sollte, ohne unsere Verantwortung für die Umwelt zu vergessen.",
+
+phoneTitle:
+"Keine starke Smartphone-Belastung",
+
+phoneText:
+"Sie benötigen keine spezielle GPU und keine dauerhafte intensive Prozessorauslastung, um teilzunehmen.",
+
+ecoTitle:
+"Technologie mit Umweltverantwortung",
+
+eco1:
+"Traditionelles Mining kann große Mengen an Strom und spezialisierte Hardware benötigen.",
+
+eco2:
+"BANK 2.0 MINING möchte zeigen, dass Mining und digitale Belohnungen auch aus einer anderen Perspektive betrachtet werden können: zugänglich, lehrreich und verantwortungsvoller.",
+
+eco3:
+"Unsere Idee ist nicht, Millionen von Smartphones mit maximaler Leistung arbeiten zu lassen. Wir möchten Nutzer an Blockchain heranführen und gleichzeitig eine effizientere technologische Vision fördern.",
+
+rewardSmall:
+"FÜR DIE COMMUNITY",
+
+rewardTitle:
+"BANK 2.0 Belohnungen",
+
+rewardIntro:
+"BANK 2.0 möchte mehr Menschen ermöglichen, das Projekt kennenzulernen und zu erfahren, wie ein Blockchain-Belohnungssystem funktioniert.",
+
+allocated:
+"Ungefähr",
+
+rewardText:
+"wurden für das BANK 2.0 MINING Community-Belohnungsprogramm vorgesehen. Ziel ist es, neue Nutzer zu erreichen, das Ökosystem zu erklären und einen Teil dieser Token an Teilnehmer zu verteilen.",
+
+rewardNotice:
+"Belohnungen hängen von der Verfügbarkeit des Community-Pools und den jeweils geltenden Bedingungen des BANK 2.0 MINING Programms ab.",
+
+walletTitle:
+"Sie benötigen eine öffentliche Solana-Adresse",
+
+walletText:
+"Sie können BANK 2.0 - WALLET oder eine andere Solana-kompatible Wallet wie Phantom, Trust Wallet oder MetaMask verwenden, sofern das entsprechende Netzwerk unterstützt wird.",
+
+officialWallet:
+"OFFIZIELLE BANK 2.0 - WALLET",
+
+startSmall:
+"IN WENIGEN MINUTEN STARTEN",
+
+startTitle:
+"So einfach geht es",
+
+startText:
+"Sie benötigen keine fortgeschrittenen Kenntnisse. Nur eine öffentliche Solana-Adresse.",
+
+step1Title:
+"Wallet auswählen",
+
+step1Text:
+"Verwenden Sie BANK 2.0 - WALLET, Phantom, Trust Wallet, MetaMask oder eine andere kompatible Wallet.",
+
+step2Title:
+"Solana öffnen",
+
+step2Text:
+"Erstellen Sie ein Solana-Konto oder öffnen Sie Ihr bereits vorhandenes Solana-Konto in Ihrer Wallet.",
+
+step3Title:
+"Adresse kopieren",
+
+step3Text:
+"Kopieren Sie ausschließlich Ihre öffentliche Solana-Adresse und fügen Sie diese in BANK 2.0 MINING ein.",
+
+step4Title:
+"Speichern und starten",
+
+step4Text:
+"Drücken Sie auf Speichern, starten Sie Ihren Zyklus und beginnen Sie Ihre BANK 2.0 MINING Erfahrung.",
+
+securityNotice:
+"WICHTIG: BANK 2.0 MINING benötigt ausschließlich Ihre ÖFFENTLICHE Solana-Adresse. Geben Sie niemals Seed Phrase, privaten Schlüssel oder Wallet-Passwort ein.",
+
+hoursTitle:
+"Ein neuer Zyklus alle 12 Stunden",
+
+hoursText:
+"Schließen Sie jeden verfügbaren Zyklus ab und Sie können gemäß den aktuellen Programmbedingungen eine BANK 2.0 Belohnung erhalten.",
+
+futureTitle:
+"BANK 2.0 ist mehr als ein Token",
+
+futureText:
+"Technologie, Community, Innovation und eine Zukunftsvision, in der Blockchain mehr Menschen auf einfache und verantwortungsvolle Weise erreichen kann.",
+
+getWallet:
+"BANK 2.0 - WALLET erhalten",
+
+footerText:
+"BANK 2.0 MINING • Teil des BANK 2.0 Ökosystems"
+
+},
+
+
+
+/* =========================
+   CHINESE
+========================= */
+
+zh:{
+
+menuAbout:"项目",
+menuEco:"环保",
+menuRewards:"奖励",
+menuStart:"开始",
+
+heroBadge:"MAXSTUDIO • BANK 2.0 生态系统",
+
+heroText:
+"一种简单的方式来了解云挖矿概念并参与 BANK 2.0 生态系统，而无需让您的手机进行高强度挖矿运算。",
+
+startNow:"立即开始",
+
+downloadWallet:
+"下载 BANK 2.0 - WALLET",
+
+learnMore:
+"了解项目",
+
+aboutSmall:
+"全新体验",
+
+aboutTitle:
+"以不同的方式了解挖矿",
+
+aboutText:
+"BANK 2.0 MINING 的目标是以简单、易用和负责任的方式，让更多人了解挖矿和区块链奖励的概念。",
+
+cloudTitle:
+"云端体验",
+
+cloudText:
+"整个体验由远程系统管理。您的手机无需执行高强度加密计算。",
+
+planetTitle:
+"关注地球环境",
+
+planetText:
+"BANK 2.0 相信，技术创新在不断发展的同时，也不应忘记我们对环境的责任。",
+
+phoneTitle:
+"不会过度消耗手机",
+
+phoneText:
+"您无需专业 GPU，也无需持续高强度使用手机处理器即可参与。",
+
+ecoTitle:
+"具有环保责任的技术",
+
+eco1:
+"传统挖矿可能需要大量电力以及专业硬件设备。",
+
+eco2:
+"BANK 2.0 MINING 希望展示一种不同的理念：挖矿和数字奖励也可以通过更易用、更具教育意义和更负责任的方式来实现。",
+
+eco3:
+"我们的目标并不是让数百万部手机持续满负荷运行，而是让更多用户了解区块链，同时推动更加高效的技术理念。",
+
+rewardSmall:
+"面向社区",
+
+rewardTitle:
+"BANK 2.0 奖励",
+
+rewardIntro:
+"BANK 2.0 希望让更多人了解项目，并体验区块链奖励系统的运作方式。",
+
+allocated:
+"大约",
+
+rewardText:
+"已分配给 BANK 2.0 MINING 社区奖励计划。目标是吸引更多新用户、帮助用户了解生态系统，并将部分代币奖励给参与者。",
+
+rewardNotice:
+"奖励取决于社区奖励池的可用余额以及 BANK 2.0 MINING 当前有效的计划条件。",
+
+walletTitle:
+"您需要一个 Solana 公共地址",
+
+walletText:
+"您可以使用 BANK 2.0 - WALLET，也可以使用兼容 Solana 的其他钱包，例如 Phantom、Trust Wallet 或支持相应网络的 MetaMask。",
+
+officialWallet:
+"官方 BANK 2.0 - WALLET",
+
+startSmall:
+"几分钟即可开始",
+
+startTitle:
+"就是这么简单",
+
+startText:
+"无需高级技术知识。您只需要一个 Solana 公共地址。",
+
+step1Title:
+"选择钱包",
+
+step1Text:
+"您可以使用 BANK 2.0 - WALLET、Phantom、Trust Wallet、MetaMask 或其他兼容钱包。",
+
+step2Title:
+"打开 Solana",
+
+step2Text:
+"在钱包中创建一个 Solana 账户，或者打开您已经拥有的 Solana 账户。",
+
+step3Title:
+"复制您的地址",
+
+step3Text:
+"只复制您的 Solana 公共地址，然后将其粘贴到 BANK 2.0 MINING 中。",
+
+step4Title:
+"保存并开始",
+
+step4Text:
+"点击保存，启动您的周期，然后开始 BANK 2.0 MINING 体验。",
+
+securityNotice:
+"重要提示：BANK 2.0 MINING 只需要您的 Solana 公共地址。绝不要输入助记词、私钥或钱包密码。",
+
+hoursTitle:
+"每 12 小时一个新周期",
+
+hoursText:
+"完成每个可用周期后，根据当前计划条件，您可能获得 BANK 2.0 奖励。",
+
+futureTitle:
+"BANK 2.0 不只是一个代币",
+
+futureText:
+"技术、社区、创新，以及让区块链以简单且负责任的方式触达更多人的未来愿景。",
+
+getWallet:
+"获取 BANK 2.0 - WALLET",
+
+footerText:
+"BANK 2.0 MINING • BANK 2.0 生态系统的一部分"
+
+}
+
+};
+
+
+/* =========================
+   LANGUAGE SWITCHER
+========================= */
+
+function changeLanguage(lang){
+
+    document.documentElement.lang = lang;
+
+    localStorage.setItem(
+        "bank20-language",
+        lang
+    );
+
+    const dictionary =
+        translations[lang];
+
+    document
+    .querySelectorAll("[data-i18n]")
+    .forEach(element => {
+
+        const key =
+            element.getAttribute(
+                "data-i18n"
+            );
+
+        if(dictionary[key]){
+            element.textContent =
+                dictionary[key];
+        }
+
+    });
+
+
+    document
+    .querySelectorAll(".lang-btn")
+    .forEach(button => {
+
+        button.classList.remove(
+            "active"
+        );
+
+        if(
+            button.dataset.lang === lang
+        ){
+            button.classList.add(
+                "active"
+            );
+        }
+
+    });
+
+}
+
+
+/* =========================
+   BUTTON EVENTS
+========================= */
+
+document
+.querySelectorAll(".lang-btn")
+.forEach(button => {
+
+    button.addEventListener(
+        "click",
+        function(){
+
+            changeLanguage(
+                this.dataset.lang
+            );
+
+        }
+    );
+
+});
+
+
+/* =========================
+   SAVED LANGUAGE
+========================= */
+
+const savedLanguage =
+    localStorage.getItem(
+        "bank20-language"
+    );
+
+if(
+    savedLanguage &&
+    translations[savedLanguage]
+){
+
+    changeLanguage(
+        savedLanguage
+    );
+
+}
+
+</script>
+
 
 </body>
 </html>
